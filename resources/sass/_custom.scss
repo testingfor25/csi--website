@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    // font-family: Avenir, Helvetica, Arial, sans-serif;
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    // background-image: url("/storage/CSI_WEBSITE_BACKGROUND_2.jpg");
+    // background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial;
+    font-size: 1.2rem;
+}
+
+p {
+    font-family: Calibri;
+    font-size: 1.2rem;
+}
+
+@keyframes moving-gradient {
+    0% { background-position: -250px 0; }
+    100% { background-position: 250px 0; }
+}
+
+.progress {
+    height: 19px;
+    background: linear-gradient(to right, #eee 20%, #ddd 50%, #eee 80%);
+    background-size: 500px 100px;
+    animation-name: moving-gradient;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.custom-text-color {
+    color: #FFFF0B !important;
+}
+
+/****************************************
+    Preloader
+******************************************/
+
+#preloader {
+    position: fixed;
+    z-index: 9999;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+}
+#preloader:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255);
+}
+.orbit-spinner, .orbit-spinner * {
+  box-sizing: border-box;
+}
+
+.orbit-spinner {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  perspective: 800px;
+}
+
+.orbit-spinner .orbit {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.orbit-spinner .orbit:nth-child(1) {
+  left: 0%;
+  top: 0%;
+  animation: orbit-spinner-orbit-one-animation 1200ms linear infinite;
+  border-bottom: 3px solid #18519F;
+}
+
+.orbit-spinner .orbit:nth-child(2) {
+  right: 0%;
+  top: 0%;
+  animation: orbit-spinner-orbit-two-animation 1200ms linear infinite;
+  border-right: 3px solid #EC3C34;
+}
+
+.orbit-spinner .orbit:nth-child(3) {
+  right: 0%;
+  bottom: 0%;
+  animation: orbit-spinner-orbit-three-animation 1200ms linear infinite;
+  border-top: 3px solid #FCF219;
+}
+
+@media only screen and (min-width: 960px) {
+  #app {
+    background-image: url("/storage/CSI_WEBSITE_BACKGROUND_2.jpg");
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+  #app {
+    background-image: url("/storage/CSI_WEBSITE_BACKGROUND_3.jpg");
+  }
+}
+
+@keyframes orbit-spinner-orbit-one-animation {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes orbit-spinner-orbit-two-animation {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@keyframes orbit-spinner-orbit-three-animation {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
